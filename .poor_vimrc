@@ -1,0 +1,38 @@
+let mapleader = " "
+nnoremap <leader>b :Ex<CR>
+nnoremap <leader>q :q<CR>
+nnoremap <leader>w :w<CR>
+
+nnoremap <leader>h gT
+nnoremap <leader>l gt
+nnoremap <leader>j <C-f>
+nnoremap <leader>k <C-b>
+
+nnoremap <leader>n :tabnew<CR>:Ex<CR>
+nnoremap <leader>tc :terminal<CR>i
+nnoremap <leader>tv <C-w>v<C-w>l:terminal<CR>i
+nnoremap <leader>ts <C-w>s<C-w>j:terminal<CR>i
+
+vnoremap d "_d
+vnoremap D "_D
+
+vnoremap p "+P
+vnoremap P "+p
+
+vnoremap y "+y
+vnoremap x "+x
+
+vnoremap > >gv
+vnoremap <lt> <lt>gv
+
+nnoremap d "_d
+nnoremap D "_D
+nnoremap dd "_dd
+
+nnoremap p "+p
+nnoremap P "+P
+nnoremap o o<Esc>
+nnoremap O O<Esc>
+
+inoremap <C-c> <Esc>
+tnoremap <Esc> <C-\><C-n>
