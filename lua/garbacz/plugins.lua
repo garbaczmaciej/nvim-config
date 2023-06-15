@@ -4,12 +4,17 @@ return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
+    -- Searching stuff
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.1',
         -- or                            , branch = '0.1.x',
         requires = { {'nvim-lua/plenary.nvim'} }
     }
 
+    -- use "savq/melange-nvim"
+    -- vim.opt.termguicolors = true
+    -- vim.cmd.colorscheme 'melange'
+    --
     use { "catppuccin/nvim", as = "catppuccin" }
     vim.cmd.colorscheme "catppuccin"
 
@@ -37,7 +42,24 @@ return require('packer').startup(function(use)
         }
     }
 
-    local lspconfig = require 'lspconfig'
-    lspconfig.pyright.setup {on_attach = on_attach,settings = {pyright = {autoImportCompletion = true,},python = {analysis = {autoSearchPaths = true,diagnosticMode = 'openFilesOnly',useLibraryCodeForTypes = true,typeCheckingMode = 'off'}}}}
+    -- Show trouble log from LSP
+    use("nvim-tree/nvim-web-devicons")
+    use("folke/trouble.nvim")
+
+    -- Commenting out
+    use("tpope/vim-commentary")
+
+    -- Running code snippets
+    use { 'michaelb/sniprun', run = 'sh ./install.sh'}
+
+    -- Adding bookmarks 
+    use("MattesGroeger/vim-bookmarks")
+
+    -- Autopairs for brackets
+    use{
+        "windwp/nvim-autopairs",
+        config = function() require("nvim-autopairs").setup {} end
+    }
 
 end)
+
